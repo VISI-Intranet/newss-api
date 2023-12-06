@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "13d8a958-2156-4ef1-8c00-577e07156430",
+		"name": "SlickTag",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29624495"
+	},
+	"item": [
+		{
+			"name": "tagGet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/Tag",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Tag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TagPost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : null,\r\n    \"newsId\" : 2,\r\n    \"teg\" : \"#Ofline\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/Tag",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Tag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tagGetById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/Tag/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Tag",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tagDelete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/Tag/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Tag",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tagUpdate",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"id\": 2,\r\n        \"newsId\": 1,\r\n        \"teg\": \"#Online\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/Tag/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Tag",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tagFilter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/VU?field=userCategory&parameter=teacher",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"VU"
+					],
+					"query": [
+						{
+							"key": "field",
+							"value": "userCategory"
+						},
+						{
+							"key": "parameter",
+							"value": "teacher"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

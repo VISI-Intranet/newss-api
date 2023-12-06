@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "04676a8b-63ac-45d5-b610-75bc854c35a1",
+		"name": "SlickNews",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29624495"
+	},
+	"item": [
+		{
+			"name": "NewsGet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/News",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"News"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewsPost",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": null,\r\n        \"authorId\": 1,\r\n        \"canComment\": true,\r\n        \"category\": \"holiday\",\r\n        \"content\": \"OldYear\",\r\n        \"date\": \"2023-11-24T06:39:31Z\",\r\n        \"filter\": \"Teacher\",\r\n        \"importance\": \"hight\",\r\n        \"time\": \"2023-11-24T06:39:31Z\",\r\n        \"titel\": \"New\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/News",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"News"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewsGetById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/News/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"News",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewsDelete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/News/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"News",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewsUpdate",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"id\": 3,\r\n        \"authorId\": 1,\r\n        \"canComment\": false,\r\n        \"category\": \"holiday\",\r\n        \"content\": \"OldYear\",\r\n        \"date\": \"2023-11-24T06:39:31Z\",\r\n        \"filter\": \"Student\",\r\n        \"importance\": \"hight\",\r\n        \"time\": \"2023-11-24T06:39:31Z\",\r\n        \"titel\": \"New\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/News/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"News",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewsFilter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/News?field=filter&parameter=Teacher",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"News"
+					],
+					"query": [
+						{
+							"key": "field",
+							"value": "filter"
+						},
+						{
+							"key": "parameter",
+							"value": "Teacher"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
