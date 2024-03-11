@@ -2,7 +2,7 @@ package model
 
 import slick.jdbc.MySQLProfile.api._
 case class ViewedUsersModel(id: Option[Int],
-                            c: String,
+                            userCategory: String,
                             userId: Int) extends Product with Serializable
 
 
