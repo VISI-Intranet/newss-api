@@ -9,6 +9,9 @@ lazy val root = (project in file("."))
   )
 
 libraryDependencies ++= Seq(
+  "com.rabbitmq" % "amqp-client" % "5.16.0",
+
+
   "com.typesafe.slick" %% "slick" % "3.3.3",
   "org.postgresql" % "postgresql" % "42.3.4",
   "com.typesafe.slick" %% "slick-hikaricp" % "3.3.3",

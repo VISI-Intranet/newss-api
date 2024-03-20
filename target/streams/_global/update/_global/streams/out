@@ -1,3 +1,51 @@
 [debug] not up to date. inChanged = true, force = false
 [debug] Updating ...
 [debug] Done updating 
+[error] java.lang.RuntimeException: found version conflict(s) in library dependencies; some are suspected to be binary incompatible:
+[error] 
+[error] 	* com.typesafe.slick:slick_2.13:3.4.1 (pvp) is selected over {3.3.3}
+[error] 	    +- univer:univer_2.13:0.0.1                           (depends on 3.4.1)
+[error] 	    +- com.typesafe.slick:slick-hikaricp_2.13:3.4.1       (depends on 3.4.1)
+[error] 	    +- com.github.tminglei:slick-pg_play-json_2.13:0.20.3 (depends on 3.3.3)
+[error] 	    +- com.github.tminglei:slick-pg_core_2.13:0.20.3      (depends on 3.3.3)
+[error] 	    +- com.github.tminglei:slick-pg_2.13:0.20.3           (depends on 3.3.3)
+[error] 
+[error] 
+[error] this can be overridden using libraryDependencySchemes or evictionErrorLevel
+[error] 	at scala.sys.package$.error(package.scala:30)
+[error] 	at sbt.internal.LibraryManagement$.resolve$1(LibraryManagement.scala:90)
+[error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$12(LibraryManagement.scala:134)
+[error] 	at sbt.util.Tracked$.$anonfun$lastOutput$1(Tracked.scala:74)
+[error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$20(LibraryManagement.scala:147)
+[error] 	at scala.util.control.Exception$Catch.apply(Exception.scala:228)
+[error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11(LibraryManagement.scala:147)
+[error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11$adapted(LibraryManagement.scala:128)
+[error] 	at sbt.util.Tracked$.$anonfun$inputChangedW$1(Tracked.scala:220)
+[error] 	at sbt.internal.LibraryManagement$.cachedUpdate(LibraryManagement.scala:161)
+[error] 	at sbt.Classpaths$.$anonfun$updateTask0$1(Defaults.scala:3801)
+[error] 	at scala.Function1.$anonfun$compose$1(Function1.scala:49)
+[error] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:63)
+[error] 	at sbt.std.Transform$$anon$4.work(Transform.scala:69)
+[error] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)
+[error] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+[error] 	at sbt.Execute.work(Execute.scala:292)
+[error] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)
+[error] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
+[error] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)
+[error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+[error] 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+[error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+[error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+[error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+[error] 	at java.base/java.lang.Thread.run(Thread.java:1589)
+[error] (update) found version conflict(s) in library dependencies; some are suspected to be binary incompatible:
+[error] 
+[error] 	* com.typesafe.slick:slick_2.13:3.4.1 (pvp) is selected over {3.3.3}
+[error] 	    +- univer:univer_2.13:0.0.1                           (depends on 3.4.1)
+[error] 	    +- com.typesafe.slick:slick-hikaricp_2.13:3.4.1       (depends on 3.4.1)
+[error] 	    +- com.github.tminglei:slick-pg_play-json_2.13:0.20.3 (depends on 3.3.3)
+[error] 	    +- com.github.tminglei:slick-pg_core_2.13:0.20.3      (depends on 3.3.3)
+[error] 	    +- com.github.tminglei:slick-pg_2.13:0.20.3           (depends on 3.3.3)
+[error] 
+[error] 
+[error] this can be overridden using libraryDependencySchemes or evictionErrorLevel

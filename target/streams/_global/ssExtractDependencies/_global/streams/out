@@ -1,12 +1,11 @@
 [error] java.lang.RuntimeException: found version conflict(s) in library dependencies; some are suspected to be binary incompatible:
 [error] 
 [error] 	* com.typesafe.slick:slick_2.13:3.4.1 (pvp) is selected over {3.3.3}
-[error] 	    +- univer:univer_2.13:0.1.0-SNAPSHOT                  (depends on 3.4.1)
-[error] 	    +- com.github.tminglei:slick-pg_core_2.13:0.21.1      (depends on 3.4.1)
-[error] 	    +- com.github.tminglei:slick-pg_2.13:0.21.1           (depends on 3.4.1)
-[error] 	    +- com.typesafe.slick:slick-hikaricp_2.13:3.3.3       (depends on 3.3.3)
+[error] 	    +- univer:univer_2.13:0.0.1                           (depends on 3.4.1)
+[error] 	    +- com.typesafe.slick:slick-hikaricp_2.13:3.4.1       (depends on 3.4.1)
 [error] 	    +- com.github.tminglei:slick-pg_play-json_2.13:0.20.3 (depends on 3.3.3)
-[error] 	    +- com.typesafe.slick:slick_2.13:3.3.3                (depends on 3.3.3)
+[error] 	    +- com.github.tminglei:slick-pg_core_2.13:0.20.3      (depends on 3.3.3)
+[error] 	    +- com.github.tminglei:slick-pg_2.13:0.20.3           (depends on 3.3.3)
 [error] 
 [error] 
 [error] this can be overridden using libraryDependencySchemes or evictionErrorLevel
@@ -39,12 +38,11 @@
 [error] (ssExtractDependencies) found version conflict(s) in library dependencies; some are suspected to be binary incompatible:
 [error] 
 [error] 	* com.typesafe.slick:slick_2.13:3.4.1 (pvp) is selected over {3.3.3}
-[error] 	    +- univer:univer_2.13:0.1.0-SNAPSHOT                  (depends on 3.4.1)
-[error] 	    +- com.github.tminglei:slick-pg_core_2.13:0.21.1      (depends on 3.4.1)
-[error] 	    +- com.github.tminglei:slick-pg_2.13:0.21.1           (depends on 3.4.1)
-[error] 	    +- com.typesafe.slick:slick-hikaricp_2.13:3.3.3       (depends on 3.3.3)
+[error] 	    +- univer:univer_2.13:0.0.1                           (depends on 3.4.1)
+[error] 	    +- com.typesafe.slick:slick-hikaricp_2.13:3.4.1       (depends on 3.4.1)
 [error] 	    +- com.github.tminglei:slick-pg_play-json_2.13:0.20.3 (depends on 3.3.3)
-[error] 	    +- com.typesafe.slick:slick_2.13:3.3.3                (depends on 3.3.3)
+[error] 	    +- com.github.tminglei:slick-pg_core_2.13:0.20.3      (depends on 3.3.3)
+[error] 	    +- com.github.tminglei:slick-pg_2.13:0.20.3           (depends on 3.3.3)
 [error] 
 [error] 
 [error] this can be overridden using libraryDependencySchemes or evictionErrorLevel
