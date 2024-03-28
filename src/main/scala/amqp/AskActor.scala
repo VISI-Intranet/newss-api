@@ -1,0 +1,5 @@
+package amqp
+
+class AskActor {
+
+}

@@ -1,0 +1,5 @@
+package routing
+
+class MailSender {
+
+}
