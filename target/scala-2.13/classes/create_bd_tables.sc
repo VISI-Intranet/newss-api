@@ -6,10 +6,10 @@ import scala.concurrent.{Await, ExecutionContext}
 import scala.language.postfixOps
 import scala.util.{Failure, Success}
 
-
+// Это код для создания базы и внутри него таблицы которые нужны
 
 val db = Database.forURL(
-  url = "jdbc:mysql://localhost:3307",
+  url = "jdbc:mysql://localhost:3306", // MySQL дың портын көрсету керек
   user = "root",
   password = "root",
   driver = "com.mysql.cj.jdbc.Driver"

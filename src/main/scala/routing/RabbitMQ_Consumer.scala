@@ -1,6 +1,6 @@
 package routing
 
-import DBManager.Main
+import akka.actor.ActorSystem
 import model.NewsModel
 import amqp._
 import repository.NewsRepo
@@ -10,10 +10,12 @@ import org.json4s.AsJsonInput.stringAsJsonInput
 
 import scala.util.{Failure, Success}
 import java.sql.Timestamp
-import scala.concurrent.ExecutionContext
 
-object RabbitMQ_Consumer extends CustomJson4sSupport {
-  implicit val executor: ExecutionContext = Main.system.getDispatcher
+class RabbitMQ_Consumer(implicit val system:ActorSystem) extends CustomJson4sSupport {
+
+  implicit val executionContext = system.getDispatcher
+  val amqpActor = system.actorSelection("user/amqpActor")
+
   def handle(message:Message)={
     message.routingKey match {
       case "univer.news_api.create_petitionPOST" =>{
@@ -40,10 +42,9 @@ object RabbitMQ_Consumer extends CustomJson4sSupport {
           case Failure(exception) => println(exception.getMessage)
         }
       }
-      case "univer.news_api.test"=>{
-        print(message.body)
+      case "какой-то роутинг кей" =>{
+        println("Какая-та обработка.")
       }
-
     }
   }
 }
