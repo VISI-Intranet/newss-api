@@ -1,16 +1,20 @@
-package repository
+package repository.newsComponent
 
-import model._
-import DBManager._
+import Main._
+import model.newsComponents.{NewsModel, NewsTable}
 import slick.jdbc.MySQLProfile.api._
-import scala.concurrent.{Await, Future}
 
+import scala.concurrent.Future
 
 object NewsRepo {
-  val NewsQuery:TableQuery[NewsTable] = TableQuery[NewsTable]
+  // Определение запроса к таблице новостей
+  val NewsQuery: TableQuery[NewsTable] = TableQuery[NewsTable]
 
+  // Метод для вставки данных новости в базу данных
   def insertData(data: NewsModel): Future[Int] = {
+    // Создание действия вставки
     val insertAction = NewsQuery += data
+    // Запуск действия вставки в базу данных и возврат фьючера с результатом
     DatabaseManager.db.run(insertAction)
   }
 
@@ -21,9 +25,8 @@ object NewsRepo {
 
   def updateData(updatedData: NewsModel): Future[Int] = {
     val updateAction = NewsQuery.filter(_.id === updatedData.id)
-      .map(news => (news.authorId, news.canComment, news.category, news.content, news.date, news.filter, news.importance, news.time, news.titel))
-      .update((updatedData.authorId, updatedData.canComment, updatedData.category, updatedData.content, updatedData.date, updatedData.filter, updatedData.importance, updatedData.time, updatedData.titel))
-
+      .map(news => (news.authorId, news.canComment, news.category, news.content, news.date, news.filter, news.importance, news.lifetime, news.titel))
+      .update((updatedData.authorId, updatedData.canComment, updatedData.category, updatedData.content, updatedData.date, updatedData.filter, updatedData.importance, updatedData.lifetime, updatedData.titel))
     DatabaseManager.db.run(updateAction)
   }
 
@@ -37,10 +40,8 @@ object NewsRepo {
     DatabaseManager.db.run(query)
   }
 
-
   def getByField(fieldName: String, value: String): Future[Seq[NewsModel]] = {
     val query = NewsQuery.filter(table => table.column[String](fieldName) === value).result
     DatabaseManager.db.run(query)
   }
-
 }

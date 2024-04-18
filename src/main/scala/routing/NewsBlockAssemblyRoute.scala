@@ -3,22 +3,22 @@ package routing
 import akka.http.scaladsl.model.StatusCodes
 import akka.http.scaladsl.server.Directives._
 import de.heikoseeberger.akkahttpjson4s.Json4sSupport
-import model.ViewedUsersModel
+import model.StyleModel
 import org.json4s.{DefaultFormats, jackson}
-import repository.ViewedUsersRepo
 
 import scala.util.{Failure, Success}
-object ViewedUsersRoute extends Json4sSupport {
+object StyleRoute extends Json4sSupport {
   implicit val serialization = jackson.Serialization
   implicit val formats = DefaultFormats
 
   private val fields: List[String] = List(
-    "userCategory",
-    "userId",
+    "content",
+    "newsId",
   )
 
+
   val route =
-    pathPrefix("VU") {
+    pathPrefix("Style") {
       concat(
         pathEnd {
           concat(
@@ -27,7 +27,7 @@ object ViewedUsersRoute extends Json4sSupport {
                 validate(fields.contains(field),
                   s"Вы ввели неправильное имя поля таблицы! Допустимые поля: ${fields.mkString(", ")}") {
                   val convertedParameter = if (parameter.matches("-?\\d+")) parameter.toInt else parameter
-                  onComplete(ViewedUsersRepo.getByField(field, parameter)) {
+                  onComplete(StyleRepo.getByField(field, parameter)) {
                     case Success(queryResponse) => complete(StatusCodes.OK, queryResponse)
                     case Failure(ex) => complete(StatusCodes.InternalServerError, s"Не удалось сделать запрос! ${ex.getMessage}")
                   }
@@ -35,14 +35,14 @@ object ViewedUsersRoute extends Json4sSupport {
               }
             },
             get {
-              onComplete(ViewedUsersRepo.getAll()) {
-                case Success(course) => complete(StatusCodes.OK, course)
-                case Failure(ex) => complete(StatusCodes.InternalServerError, s"Ошибка при получении курса: ${ex.getMessage}")
+              onComplete(StyleRepo.getAll()) {
+                case Success(courses) => complete(StatusCodes.OK, courses)
+                case Failure(ex) => complete(StatusCodes.InternalServerError, s"Ошибка при получении курсов: ${ex.getMessage}")
               }
             },
             post {
-              entity(as[ViewedUsersModel]) { news =>
-                onComplete(ViewedUsersRepo.insertData(news)) {
+              entity(as[StyleModel]) { style =>
+                onComplete(StyleRepo.insertData(style)) {
                   case Success(newCourseId) =>
                     complete(StatusCodes.Created, s"ID нового курса: $newCourseId")
                   case Failure(ex) =>
@@ -52,24 +52,24 @@ object ViewedUsersRoute extends Json4sSupport {
             }
           )
         },
-        path(Segment) { newsId =>
+        path(Segment) { styleId =>
           concat(
             get {
-              onComplete(ViewedUsersRepo.getById(newsId)) {
+              onComplete(StyleRepo.getById(styleId)) {
                 case Success(course) => complete(StatusCodes.OK, course)
                 case Failure(ex) => complete(StatusCodes.InternalServerError, s"Ошибка при получении курса: ${ex.getMessage}")
               }
             },
             put {
-              entity(as[ViewedUsersModel]) { updatedNews =>
-                onComplete(ViewedUsersRepo.updateData(updatedNews)) {
+              entity(as[StyleModel]) { updatedStyle =>
+                onComplete(StyleRepo.updateData(updatedStyle)) {
                   case Success(_) => complete(StatusCodes.OK, "Курс успешно обновлен")
                   case Failure(ex) => complete(StatusCodes.InternalServerError, s"Не удалось обновить курс: ${ex.getMessage}")
                 }
               }
             },
             delete {
-              onComplete(ViewedUsersRepo.deleteData(newsId)) {
+              onComplete(StyleRepo.deleteData(styleId)) {
                 case Success(_) => complete(StatusCodes.NoContent, "Курс успешно удален")
                 case Failure(ex) => complete(StatusCodes.InternalServerError, s"Не удалось удалить курс: ${ex.getMessage}")
               }
