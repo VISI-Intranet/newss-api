@@ -7,6 +7,7 @@ import scala.concurrent.duration._
 import DBManager.DatabaseManager._
 
 case class NewsModel(id: Option[Int],
+                     event_id:Int,
                      authorId: Int,
                      canComment: Boolean,
                      category: String,
@@ -20,6 +21,7 @@ case class NewsModel(id: Option[Int],
 
 class NewsTable(tag: Tag) extends Table[NewsModel](tag, "news") {
   def id: Rep[Option[Int]] = column[Int]("id", O.PrimaryKey, O.AutoInc)
+  def event_id = column[Int]("event_id")
   def authorId = column[Int]("authorId")
   def canComment = column[Boolean]("canComment")
   def category = column[String]("category")
@@ -32,6 +34,7 @@ class NewsTable(tag: Tag) extends Table[NewsModel](tag, "news") {
 
   def * = (
     id,
+    event_id,
     authorId,
     canComment,
     category,

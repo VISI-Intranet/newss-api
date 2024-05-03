@@ -25,7 +25,7 @@ object NewsRoute extends Json4sSupport {
   )
 
   val route =
-    pathPrefix("News") {
+    pathPrefix("news") {
       concat(
         pathEnd {
           concat(

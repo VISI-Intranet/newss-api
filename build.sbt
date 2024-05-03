@@ -22,8 +22,15 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-stream" % "2.6.16",
   "de.heikoseeberger" %% "akka-http-json4s" % "1.37.0",
 
-)
+  "com.lightbend.akka" %% "akka-stream-alpakka-amqp" % "6.0.2",
+  "com.rabbitmq" % "amqp-client" % "5.12.0"
 
+
+
+)
+libraryDependencies += "io.circe" %% "circe-core" % "0.14.1"
+libraryDependencies += "io.circe" %% "circe-generic" % "0.14.1"
+libraryDependencies += "io.circe" %% "circe-parser" % "0.14.1"
 
 libraryDependencies += "mysql" % "mysql-connector-java" % "8.0.33"
 

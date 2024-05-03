@@ -1,5 +1,5 @@
 <component name="libraryTable">
-  <library name="sbt: de.heikoseeberger:akka-http-json4s_2.13:1.37.0:jar">
+  <library name="sbt: de.heikoseeberger:akka-http-json4s_2.13:1.37.0:jar" external-system-id="SBT">
     <CLASSES>
       <root url="jar://$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/de/heikoseeberger/akka-http-json4s_2.13/1.37.0/akka-http-json4s_2.13-1.37.0.jar!/" />
     </CLASSES>
